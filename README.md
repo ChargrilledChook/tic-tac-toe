@@ -7,6 +7,10 @@ An assignment for the OOP section of Ruby Programming for The Odin Project.
 * A simple command line tic tac toe game for two players
 * Works as you'd expect!
 
+## Version History
+
+V1 completed xxx
+
 ## Future Updates
 
 ### Planned Features
