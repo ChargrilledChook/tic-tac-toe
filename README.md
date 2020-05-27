@@ -25,7 +25,7 @@ V1 completed 26 / 5 / 2020.
 
 * A pass on public / private methods
 * Reduce size of Referee class?
-* Separate objects into different files?
+* Separate objects into different files? DONE
 * More efficient / clean implementation of win condition, smaller case statement
 
 ## Reflections
