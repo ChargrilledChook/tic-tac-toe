@@ -1,40 +1,3 @@
-class GameBoard
-
-  attr_accessor :co_ords
-
-  def initialize()
-    @co_ords = (0..9).to_a
-  end
-
-  def draw_board()
-    puts ""
-    puts " #{@co_ords[7]} | #{@co_ords[8]} | #{@co_ords[9]} "
-    puts "-----------"
-    puts " #{@co_ords[4]} | #{@co_ords[5]} | #{@co_ords[6]} "
-    puts "-----------"
-    puts " #{@co_ords[1]} | #{@co_ords[2]} | #{@co_ords[3]} "
-    puts ""
-  end
-end
-
-class Player
-
-  attr_reader :name
-  attr_accessor :symbol 
-
-  @@symbols = []
-
-  def self.symbols
-    @@symbols
-  end
-
-    def initialize(name,symbol)
-      @name = name
-      @symbol = symbol
-      @@symbols << symbol
-    end
-end
-
 class Referee
   def initialize(name)
     @name = name
@@ -103,16 +66,4 @@ class Referee
       end
     end
   end
-
 end
-
-def boot_game()
-  player_1 = Player.new('P1','O')
-  player_2 = Player.new('P2','X')
-  board = GameBoard.new()
-  ref = Referee.new('ref')
-  board.draw_board()
-  ref.game_loop(player_1, player_2, board)
-end
-
-boot_game()
