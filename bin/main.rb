@@ -1,6 +1,6 @@
-require_relative 'board'
-require_relative 'referee'
-require_relative 'player'
+require_relative '../lib/board'
+require_relative '../lib/referee'
+require_relative '../lib/player'
 
 def boot_game()
   player_1 = Player.new('P1','O')
@@ -10,6 +10,5 @@ def boot_game()
   board.draw_board()
   ref.game_loop(player_1, player_2, board)
 end
-  
+
 boot_game()
-  
