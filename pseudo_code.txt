@@ -1,4 +1,11 @@
 
+V 2.0 - Testing
+
+Test win conditions
+
+
+V 1.0
+
 Main game loop:
 
 #1 Get player 1 input
@@ -27,4 +34,3 @@ Requirements:
     #4a or 4b
 
 #6 Loop to alternate between players WORKS
-
