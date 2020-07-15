@@ -34,6 +34,7 @@ class Referee
       puts board.draw_board
       if board.game_won?(turn.symbol)
         puts "#{turn.name} wins!"
+        p board.co_ords
         game_over = true
       elsif move_counter >= 9
         puts "It's a tie. Woo."
