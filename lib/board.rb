@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Holds data for win conditions and current game state.
 class GameBoard
   attr_accessor :co_ords
   attr_reader :win_combos
@@ -18,13 +19,14 @@ class GameBoard
     ]
   end
 
+  # Removing @ and using accessor method increases ABC score. Unsure why
   def draw_board
     %(
-  #{co_ords[7]} | #{co_ords[8]} | #{co_ords[9]}
+  #{@co_ords[7]} | #{@co_ords[8]} | #{@co_ords[9]}
   ---------
-  #{co_ords[4]} | #{co_ords[5]} | #{co_ords[6]}
+  #{@co_ords[4]} | #{@co_ords[5]} | #{@co_ords[6]}
   ---------
-  #{co_ords[1]} | #{co_ords[2]} | #{co_ords[3]}
+  #{@co_ords[1]} | #{@co_ords[2]} | #{@co_ords[3]}
   )
   end
 
