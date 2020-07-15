@@ -25,8 +25,9 @@ describe GameBoard do
   ---------
   4 | 5 | 6
   ---------
-  1 | 2 | 3)
-    )
+  1 | 2 | 3
+  )
+      )
     end
 
     it 'draws the correct board with updated values' do
@@ -39,8 +40,15 @@ describe GameBoard do
   ---------
   4 | O | 6
   ---------
-  1 | 2 | 3)
+  1 | 2 | 3
+  )
       )
+    end
+  end
+
+  describe '#win_combos' do
+    it 'has the correct values' do
+      expect(GameBoard.new.win_combos).to eq([[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[3,5,7],[1,5,9]])
     end
   end
 end

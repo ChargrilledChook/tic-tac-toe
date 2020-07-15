@@ -2,9 +2,19 @@
 
 class GameBoard
   attr_accessor :co_ords
+  attr_reader :win_combos
 
   def initialize
     @co_ords = (0..9).to_a
+    @win_combos = [
+      [1,2,3],
+      [4,5,6],
+      [7,8,9],
+      [1,4,7],
+      [2,5,8],
+      [3,6,9],
+      [3,5,7],
+      [1,5,9]]
   end
 
   def draw_board
@@ -13,8 +23,7 @@ class GameBoard
   ---------
   #{@co_ords[4]} | #{@co_ords[5]} | #{@co_ords[6]}
   ---------
-  #{@co_ords[1]} | #{@co_ords[2]} | #{@co_ords[3]})
+  #{@co_ords[1]} | #{@co_ords[2]} | #{@co_ords[3]}
+  )
   end
 end
-
-puts GameBoard.new.draw_board

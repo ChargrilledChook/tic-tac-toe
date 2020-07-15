@@ -20,5 +20,3 @@ def game_won?(board)
     false
   end
 end
-
-lines = [[5, 4 ,6], [5]]

@@ -22,25 +22,9 @@ class Referee
     end
   end
 
-  def game_won?(board)
-    if board[5] == board[4] && board[5] == board[6]
-      true
-    elsif board[5] == board[2] && board[5] == board[8]
-      true
-    elsif board[5] == board[1] && board[5] == board[9]
-      true
-    elsif board[5] == board[3] && board[5] == board[7]
-      true
-    elsif board[1] == board[2] && board[1] == board[3]
-      true
-    elsif board[1] == board[4] && board[1] == board[7]
-      true
-    elsif board[9] == board[3] && board[9] == board[6]
-      true
-    elsif board[9] == board[7] && board[9] == board[8]
-      true
-    else
-      false
+  def game_won?(board, player)
+    board.win_combos.any? do |line|
+      line.all? { |mark| board.co_ords[mark] == player }
     end
   end
 
@@ -53,8 +37,8 @@ class Referee
       move = get_move(turn) until check_move(board, move, Player.symbols)
       board.co_ords[move] = turn.symbol
       move_counter += 1
-      board.draw_board
-      if game_won?(board.co_ords)
+      puts board.draw_board
+      if game_won?(board, turn.symbol)
         puts "#{turn.name} wins!"
         game_over = true
       elsif move_counter >= 9
