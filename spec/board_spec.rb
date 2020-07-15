@@ -60,25 +60,25 @@ describe GameBoard do
   describe '#game_won?' do
     it 'returns false when game is not won' do
       board = GameBoard.new
-      board.co_ords = [0, "O", "O", 3, "X", "X", 6, 7, 8, 9]
+      board.co_ords = [0, 'O', 'O', 3, 'X', 'X', 6, 7, 8, 9]
       expect(board.game_won?('O')).to eq false
     end
 
     it 'returns true when won on a horizontal' do
       board = GameBoard.new
-      board.co_ords = [0, "O", "O", "O", "X", "X", 6, 7, 8, 9]
+      board.co_ords = [0, 'O', 'O', 'O', 'X', 'X', 6, 7, 8, 9]
       expect(board.game_won?('O')).to eq true
     end
 
     it 'returns true when won on a diagonal' do
       board = GameBoard.new
-      board.co_ords = [0, 1, 2, "O", "X", "O", 6, "O", 8, "X"]
+      board.co_ords = [0, 1, 2, 'O', 'X', 'O', 6, 'O', 8, 'X']
       expect(board.game_won?('O')).to eq true
     end
 
     it 'returns true when won on a vertical' do
       board = GameBoard.new
-      board.co_ords = [0, "O", 2, 3, "O", 5, "X", "O", "X", 9]
+      board.co_ords = [0, 'O', 2, 3, 'O', 5, 'X', 'O', 'X', 9]
       expect(board.game_won?('O')).to eq true
     end
   end

@@ -1,18 +1,22 @@
 # frozen_string_literal: true
 
+require 'colorize'
+
 # Holds all relevant objects. Boots and loops a single game of TicTacToe.
 class Referee
   attr_reader :p1, :p2, :board, :symbols
 
   def initialize
-    @p1 = Player.new('P1', 'O')
-    @p2 = Player.new('P2', 'X')
+    @p1 = Player.new('P1'.red, 'O'.red)
+    @p2 = Player.new('P2'.blue, 'X'.blue)
     @symbols = [p1.symbol, p2.symbol]
     @board = GameBoard.new
   end
 
   def new_game
-    puts 'Welcome to Tic Tac Toe!'
+    puts %(
+      ~~~ Welcome to Tic Tac Toe! ~~~
+    ).colorize(:black).colorize(background: :white)
     puts board.draw_board
     game_loop
   end
