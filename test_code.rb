@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def game_won?(board)
   case board
   when board[5] == board[4] && board[5] == board[6]

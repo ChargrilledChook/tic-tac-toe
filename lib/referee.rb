@@ -22,12 +22,6 @@ class Referee
     end
   end
 
-  def game_won?(board, player)
-    board.win_combos.any? do |line|
-      line.all? { |mark| board.co_ords[mark] == player }
-    end
-  end
-
   def game_loop(p1, p2, board)
     game_over = false
     turn = p1
@@ -38,7 +32,7 @@ class Referee
       board.co_ords[move] = turn.symbol
       move_counter += 1
       puts board.draw_board
-      if game_won?(board, turn.symbol)
+      if board.game_won?(turn.symbol)
         puts "#{turn.name} wins!"
         game_over = true
       elsif move_counter >= 9

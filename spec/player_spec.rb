@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/player'
 
 describe Player do
@@ -14,6 +16,4 @@ describe Player do
       expect(player.symbol).to eq('X')
     end
   end
-
 end
-

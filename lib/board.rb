@@ -7,23 +7,30 @@ class GameBoard
   def initialize
     @co_ords = (0..9).to_a
     @win_combos = [
-      [1,2,3],
-      [4,5,6],
-      [7,8,9],
-      [1,4,7],
-      [2,5,8],
-      [3,6,9],
-      [3,5,7],
-      [1,5,9]]
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
+      [1, 4, 7],
+      [2, 5, 8],
+      [3, 6, 9],
+      [3, 5, 7],
+      [1, 5, 9]
+    ]
   end
 
   def draw_board
     %(
-  #{@co_ords[7]} | #{@co_ords[8]} | #{@co_ords[9]}
+  #{co_ords[7]} | #{co_ords[8]} | #{co_ords[9]}
   ---------
-  #{@co_ords[4]} | #{@co_ords[5]} | #{@co_ords[6]}
+  #{co_ords[4]} | #{co_ords[5]} | #{co_ords[6]}
   ---------
-  #{@co_ords[1]} | #{@co_ords[2]} | #{@co_ords[3]}
+  #{co_ords[1]} | #{co_ords[2]} | #{co_ords[3]}
   )
+  end
+
+  def game_won?(player)
+    win_combos.any? do |line|
+      line.all? { |mark| co_ords[mark] == player }
+    end
   end
 end
