@@ -15,7 +15,7 @@ class Referee
 
   def new_game
     puts %(
-      ~~~ Welcome to Tic Tac Toe! ~~~
+  ~~~ Welcome to Tic Tac Toe! ~~~
     ).colorize(:black).colorize(background: :white)
     puts board.draw_board
     game_loop
