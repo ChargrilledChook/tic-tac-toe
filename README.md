@@ -39,9 +39,13 @@ Output seems perfect, unsure about the quality of the input.
 
 ### Testing
 
+Generally a satisfying experience. Reasonably comfortable with simple tests (ie making sure methods return what you want) but need some more practice on more complex testing. Yet to really use doubles etc. Felt somewhat lost on how to test the referee object, which loops the entire game with only a single public method.
+Lots to learn but a decent first attempt.
 
 ### Testing Refactor
 
+When going back to add tests, I did some refactoring to implement some of the lessons I've learnt in the ~7 weeks since I originally completed the project.
+While I would probably write many things very different if I started from scratch, I did my best to make change that weren't too disruptive to the original implementation. I changed some of the most bloated functions into simpler implementations (eg changed checking win conditions from a huge if/elsif statement to an enumerable) and attempted to make variable names more descriptive, or reorganise code to be cleaner, shorter and more readable in general. In general I'm happy with the result and think the code on the whole is in a much better state.
 
 ### Successes
 
