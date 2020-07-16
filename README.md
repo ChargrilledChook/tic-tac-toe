@@ -2,6 +2,8 @@
 
 An assignment for the OOP section of Ruby Programming for The Odin Project to practice and showcase object oriented programming.
 
+## [Play on Repl.it](https://repl.it/@HappyFrog/tic-tac-toe#bin/main.rb)
+
 ## Features
 
 * A simple command line tic tac toe game for two players
