@@ -1,8 +1,9 @@
 # Tic-tac-toe
 
-An assignment for the OOP section of Ruby Programming for The Odin Project to practice and showcase object oriented programming.
-
 ## [Play on Repl.it](https://repl.it/@HappyFrog/tic-tac-toe#bin/main.rb)
+
+An assignment for the OOP section of Ruby Programming for The Odin Project to practice and showcase object oriented programming.
+Updated to practice automated testing.
 
 ## Features
 
@@ -11,7 +12,9 @@ An assignment for the OOP section of Ruby Programming for The Odin Project to pr
 
 ## Version History
 
-V1 completed 26 / 5 / 2020.
+2.0 Completed 16/7/2020. Added automated testing suite. Refactored code to be cleaner and shorter. Added colorful output to terminal via colorize gem.
+
+1.0 completed 26 / 5 / 2020.
 
 ## Future Updates
 
@@ -20,19 +23,25 @@ V1 completed 26 / 5 / 2020.
 * Add simple / random AI
 * Add smarter AI
 * Add ability to reset on end of game
-* Add repl.it link
+* Add repl.it link DONE
 * Add slightly more polish, ie more detailed instructions, a welcome message etc
 
 ### Code Refactoring
 
-* A pass on public / private methods
-* Reduce size of Referee class?
+* A pass on public / private methods DONE
+* Reduce size of Referee class? DONE
 * Separate objects into different files? DONE
-* More efficient / clean implementation of win condition, smaller case statement
+* More efficient / clean implementation of win condition, smaller case statement DONE
 
 ## Reflections
 
 Output seems perfect, unsure about the quality of the input.
+
+### Testing
+
+
+### Testing Refactor
+
 
 ### Successes
 
