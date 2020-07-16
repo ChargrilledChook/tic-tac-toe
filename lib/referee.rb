@@ -2,7 +2,7 @@
 
 require 'colorize'
 
-# Holds all relevant objects. Boots and loops a single game of TicTacToe.
+# Boots and loops a single game of TicTacToe. Board and player dependencies are injected here.
 class Referee
   attr_reader :p1, :p2, :board, :symbols
 
@@ -23,15 +23,27 @@ class Referee
 
   private
 
-  def game_loop(turn = p1)
+  # Infinite loop that switches player each iteration. Relies on #check_gameover to exit loop
+  def game_loop(current_player = p1)
     move_counter = 0
     loop do
-      move = get_move(turn)
-      board.co_ords[move] = turn.symbol
+      move = get_move(current_player)
+      board.co_ords[move] = current_player.symbol
       move_counter += 1
       puts board.draw_board
-      check_gameover(turn, move_counter)
-      turn = turn == p1 ? p2 : p1
+      check_gameover(current_player, move_counter)
+      current_player = current_player == p1 ? p2 : p1
+    end
+  end
+
+  # Recursively calls itself until it gets valid input
+  def get_move(player)
+    print "#{player.name}, your move: "
+    move = gets.chomp.to_i
+    if check_move?(move)
+      move
+    else
+      get_move(player)
     end
   end
 
@@ -47,19 +59,10 @@ class Referee
     end
   end
 
-  def get_move(player)
-    print "#{player.name}, your move: "
-    move = gets.chomp.to_i
-    if check_move?(move)
-      move
-    else
-      get_move(player)
-    end
-  end
-
-  def check_gameover(turn, counter)
-    if board.game_won?(turn.symbol)
-      puts "#{turn.name} wins!"
+  # Will exit the whole program if a win or draw condition is true
+  def check_gameover(player, counter)
+    if board.game_won?(player.symbol)
+      puts "#{player.name} wins!"
       exit
     elsif counter >= 9
       puts "It's a tie. Woo."
